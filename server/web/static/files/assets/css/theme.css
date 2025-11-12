@@ -1,0 +1,61 @@
+@import url(//fonts.googleapis.com/css?family=Montserrat:300,500);
+.container {
+      height: 100vh; /* Full viewport height */
+}
+
+.content-wrapper {
+      margin-top: 100px; /* Adjust this value to match the height of your navbar */
+}
+
+.bg-image {
+      height: 100%; /* Full height of the column */
+      display: flex;
+      justify-content: center;  /* Center horizontally */
+      align-items: center;      /* Center vertically */
+}
+
+.login-img{
+      background: url('../img/cover/bg-1.jpg');
+      background-size: cover;       /* Ensure the image covers the entire div */
+      background-position: center;  /* Center the image in the div */
+      background-repeat: no-repeat; /* Prevent image repetition */
+      height: 100%; 
+}
+
+.overlay {
+      background-color: rgba(0, 0, 0, 0.9); /* Dark semi-transparent overlay */
+      padding: 2rem;
+      border-radius: 10px;
+}
+
+.login-form{
+      height: 100%; /* Full height of the row */
+      display: flex;
+      justify-content: center;  /* Center horizontally */
+      align-items: center;      /* Center vertically */
+}
+aside{
+      background-color: #003d99;
+      font-weight: 500;
+}
+aside a{
+      color: white;
+}
+aside .sidebar nav a{
+      color: white;
+}
+
+img .brand-image{
+      height: 50px;
+}
+
+.modal-content {
+      font-size: inherit;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+      content: " > "; 
+      padding: 0 8px;
+      color: #6c757d;
+}
+    

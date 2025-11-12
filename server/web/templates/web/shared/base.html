@@ -1,0 +1,287 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>AppLaud | Dashboard</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="{% static 'files/dist/img/logo.png' %}" type="image/icon type">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="{% static 'files/plugins/fontawesome-free/css/all.min.css' %}">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- Tempusdominus Bbootstrap 4 -->
+        <link rel="stylesheet" href="{% static 'files/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+        <!-- iCheck -->
+        <link rel="stylesheet" href="{% static 'files/plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+        <!-- JQVMap -->
+        <link rel="stylesheet" href="{% static 'files/plugins/jqvmap/jqvmap.min.css' %}">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="{% static 'files/dist/css/adminlte.min.css' %}">
+        <!-- overlayScrollbars -->
+        <link rel="stylesheet" href="{% static 'files/plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="{% static 'files/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+        <link rel="stylesheet" href="{% static 'files/plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+        <link rel="stylesheet" href="{% static 'files/plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+        <!-- Daterange picker -->
+        <link rel="stylesheet" href="{% static 'files/plugins/daterangepicker/daterangepicker.css' %}">
+        <!-- summernote -->
+        <link rel="stylesheet" href="{% static 'files/plugins/summernote/summernote-bs4.min.css' %}">
+        <!--bs-stepper-->
+        <link rel="stylesheet" href="{% static 'files/plugins/bs-stepper/css/bs-stepper.min.css' %}">
+        <!-- Select2 -->
+        <link rel="stylesheet" href="{% static 'files/plugins/select2/css/select2.min.css' %}">
+        <link rel="stylesheet" href="{% static 'files/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
+        <!--Toast & SweetAlert-->
+        <link rel="stylesheet" href="{% static 'files/plugins/toastr/toastr.min.css' %}">
+        <link rel="stylesheet" href="{% static 'files/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css' %}">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="{% static 'files/dist/css/adminlte.min.css' %}">
+        <!-- Google Font: Source Sans Pro -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+        <style>
+            .wrapper {
+                zoom: 0.8;
+            }
+
+            .sidebar {
+                height: 100% !important;
+            }
+
+            .main-sidebar {
+                min-height: calc(100vh / 0.8);
+                transform-origin: left top;
+            }
+
+            /* Content area adjustments */
+            .content-wrapper {
+                min-height: calc(100vh / 0.9) !important;  /* Match sidebar height */
+            }
+        </style>
+    </head>
+    <body class="hold-transition sidebar-mini layout-fixed">
+        <div class="wrapper">
+            {% block content %}{% endblock %}
+        </div> 
+    </body>
+    <!-- jQuery -->
+    <script src="{% static 'files/plugins/jquery/jquery.min.js' %}"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="{% static 'files/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+    $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="{% static 'files/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- ChartJS -->
+    <script src="{% static 'files/plugins/chart.js/Chart.min.js' %}"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="{% static 'files/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'files/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'files/plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'files/plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'files/plugins/datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'files/plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'files/plugins/jszip/jszip.min.js' %}"></script>
+    <script src="{% static 'files/plugins/pdfmake/pdfmake.min.js' %}"></script>
+    <script src="{% static 'files/plugins/pdfmake/vfs_fonts.js' %}"></script>
+    <script src="{% static 'files/plugins/datatables-buttons/js/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'files/plugins/datatables-buttons/js/buttons.print.min.js' %}"></script>
+    <script src="{% static 'files/plugins/datatables-buttons/js/buttons.colVis.min.js' %}"></script>
+    <!-- Sparkline -->
+    <script src="{% static 'files/plugins/sparklines/sparkline.js' %}"></script>
+    <!-- JQVMap -->
+    <script src="{% static 'files/plugins/jqvmap/jquery.vmap.min.js' %}"></script>
+    <script src="{% static 'files/plugins/jqvmap/maps/jquery.vmap.usa.js' %}"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="{% static 'files/plugins/jquery-knob/jquery.knob.min.js' %}"></script>
+    <!-- daterangepicker -->
+    <script src="{% static 'files/plugins/moment/moment.min.js' %}"></script>
+    <script src="{% static 'files/plugins/daterangepicker/daterangepicker.js' %}"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="{% static 'files/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+    <!-- Summernote -->
+    <script src="{% static 'files/plugins/summernote/summernote-bs4.min.js' %}"></script>
+    <!-- Select2 -->
+    <script src="{% static 'files/plugins/select2/js/select2.full.min.js' %}"></script>
+    <!-- overlayScrollbars -->
+    <script src="{% static 'files/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+    <!-- SweetAlert2 -->
+    <script src="{% static 'files/plugins/sweetalert2/sweetalert2.min.js' %}"></script>
+    <!-- Toastr -->
+    <script src="{% static 'files/plugins/toastr/toastr.min.js' %}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static 'files/dist/js/adminlte.js' %}"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="{% static 'files/dist/js/pages/dashboard.js' %}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{% static 'files/dist/js/demo.js' %}"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/static/serviceworker.js')
+            .then(function(registration) {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch(function(error) {
+                console.log('Service Worker registration failed:', error);
+            });
+        }
+    </script>
+    <script>
+        (function () {
+            var dz = document.getElementById('attachmentFileDropzone');
+            var input = document.getElementById('attachmentFile');
+            var filename = document.getElementById('attachmentFilename');
+            var message = dz.querySelector('.dz-message');
+
+            function highlight(on) {
+            dz.style.borderColor = on ? '#007bff' : '#d3d3d3';
+            dz.style.backgroundColor = on ? '#f0f8ff' : '#f9f9f9';
+            }
+
+            function updateFilename() {
+            if (!input.files || !input.files[0]) return;
+            message.style.display = 'none';
+            filename.textContent = input.files[0].name;
+            filename.style.display = 'block';
+            }
+
+            dz.addEventListener('click', function () { input.click(); });
+            dz.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                input.click();
+            }
+            });
+
+            ['dragenter', 'dragover'].forEach(function (evt) {
+            dz.addEventListener(evt, function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                highlight(true);
+            });
+            });
+
+            ['dragleave', 'drop'].forEach(function (evt) {
+            dz.addEventListener(evt, function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                highlight(false);
+            });
+            });
+
+            dz.addEventListener('drop', function (e) {
+            if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length) {
+                input.files = e.dataTransfer.files;
+                updateFilename();
+            }
+            });
+
+            input.addEventListener('change', updateFilename);
+        })();
+    </script>
+    <script>
+        /**
+        $(document).ready(function () {
+            // Only activate if URL does NOT contain "/signin/"
+            if (window.location.pathname.indexOf("/auth/") === -1) {
+                var idleTime = 0;
+                var idleLimit = 5 * 60; // 5 minutes in seconds
+                var countdown = 30; // 30 seconds to confirm
+                var countdownInterval;
+                var warningShown = false;
+
+                // Increment idle time every second
+                var idleInterval = setInterval(timerIncrement, 1000);
+
+                function timerIncrement() {
+                    idleTime++;
+                    if (idleTime >= idleLimit && !warningShown) {
+                        warningShown = true;
+                        startCountdown();
+                    }
+                }
+
+                // Reset idle time on activity
+                $(this).on('mousemove keypress click scroll', function () {
+                    idleTime = 0;
+                    if (warningShown) {
+                        resetCountdown();
+                    }
+                });
+
+                function startCountdown() {
+                    countdown = 30;
+                    Swal.fire({
+                        title: "Session Expiring!",
+                        html: "You will be logged out in <b>" + countdown + "</b> seconds. Do you want to stay logged in?",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonText: "Stay Logged In",
+                        cancelButtonText: "Logout",
+                        allowOutsideClick: false,
+                        allowEscapeKey: false
+                    }).then((result) => {
+                        if (result.value) {
+                            resetCountdown();
+                        } else {
+                            logoutUser();
+                        }
+                    });
+
+                    countdownInterval = setInterval(function () {
+                        countdown--;
+                        $(".swal-text").text("You will be logged out in " + countdown + " seconds. Do you want to stay logged in?");
+                        if (countdown <= 0) {
+                            clearInterval(countdownInterval);
+                            logoutUser();
+                        }
+                    }, 5000);
+                }
+
+                function resetCountdown() {
+                    clearInterval(countdownInterval);
+                    swal.close();
+                    warningShown = false;
+                    idleTime = 0;
+                }
+
+                function logoutUser() {
+                    window.location.href = "{% url 'signout' %}"; // Change to your logout URL
+                }
+            }
+        });
+        **/
+    </script>
+
+    <script>
+        $(function () {
+            // Initialize Select2 Elements
+            $('.select2').each(function() {
+                $(this).select2({
+                    placeholder: "Please Select Here",
+                    width: "100%",
+                    dropdownParent: $(this).closest('div')
+                });
+            });
+    
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
+    
+            //Initialize Summernote
+            $('.summernote').summernote();
+
+            //Initialize DataTable
+            $('.dt').DataTable({
+                "responsive": true, "autoWidth": false,
+            });
+        })
+    </script>
+</html>
