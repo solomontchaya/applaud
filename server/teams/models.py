@@ -11,13 +11,24 @@ class Team(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name_plural = "Teams"
+        ordering = ['name']
+
     @property
     def member_count(self):
-        return self.members.count()
+        return self.memberships.count()
 
     @property
     def project_count(self):
         return self.projects.count()
+    
+    @property
+    def leader(self):
+        try:
+            return self.memberships.filter(role='admin').first().user
+        except:
+            return None
     
     def __str__(self):
         return self.name
@@ -35,6 +46,8 @@ class TeamMember(models.Model):
 
     class Meta:
         unique_together = ('team', 'user')
+        verbose_name = "Team Member"
+        verbose_name_plural = "Team Members"
 
     def __str__(self):
         return f"{self.user.email} - {self.team.name} ({self.role})"

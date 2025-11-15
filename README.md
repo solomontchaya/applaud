@@ -18,7 +18,7 @@ This repository serves as my documentation hub, summarizing all the key learning
 
 This platform enables:
 
-### 👥 **Teams to:**
+### **Teams to:**
 
 * Register and create team profiles
 * Submit their project (title, description, media, etc.)

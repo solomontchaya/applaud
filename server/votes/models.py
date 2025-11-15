@@ -15,15 +15,34 @@ class Vote(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        unique_together = ('voter', 'project')
+        verbose_name = "Vote"
+        verbose_name_plural = "Votes"
+
     def clean(self):
+        # Overall vote: only one per user
         if self.is_overall:
             if Vote.objects.filter(voter=self.voter, is_overall=True).exclude(pk=self.pk).exists():
-                raise ValidationError("You have already voted for overall.")
+                raise ValidationError("You have already cast an overall vote.")
+
+        # Category vote: one per category
         else:
             if not self.project.category:
-                raise ValidationError("Category must be set for category vote.")
-            if Vote.objects.filter(voter=self.voter, category=self.project.category).exclude(pk=self.pk).exists():
-                raise ValidationError(f"You have already voted for {self.project.category.name}.")
+                raise ValidationError("Project must belong to a category for a category vote.")
+            if Vote.objects.filter(
+                voter=self.voter,
+                project__category=self.project.category,
+                is_overall=False
+            ).exclude(pk=self.pk).exists():
+                raise ValidationError(
+                    f"You have already voted in the '{self.project.category.name}' category."
+                )
+
+    def save(self, *args, **kwargs):
+        self.full_clean()  # Enforces clean() at model level
+        super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"{self.voter.email} voted {self.project.title}"
+        kind = "Overall" if self.is_overall else "Category"
+        return f"{self.voter.email} → {kind}: {self.project.name}"
